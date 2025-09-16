@@ -5,12 +5,25 @@ The website demonstrates the use of **HTML, CSS, JavaScript, GitHub, and deploym
 
 ---
 
-## 🌐 Live Website
-[Visit the deployed site](https://your-project-name.vercel.app/)  
+## Live Website
+[Visit the deployed site](https://tutorial-1-a-cos-30045.vercel.app/)  
 
 ---
 
-## 🛠 Features
+## Project Structure
+appliance-energy-website/
+├── index.html # Home page
+├── televisions.html # Televisions page
+├── about.html # About Us page
+├── style.css # CSS styling
+├── script.js # JavaScript interactivity
+├── PowerIcon.png # Logo
+└── README.md # Project documentation
+
+
+---
+
+## Features
 - **Three pages**: Home, Televisions, About Us  
 - **Navigation bar**:
   - Switch between pages with JavaScript  
@@ -25,17 +38,12 @@ The website demonstrates the use of **HTML, CSS, JavaScript, GitHub, and deploym
 
 ---
 
-## 🚀 Deployment
+## Deployment
 The project is deployed using **Vercel**:  
-1. Push code to a **public GitHub repository**.  
-2. Go to [Vercel](https://vercel.com/), log in with GitHub, and select the repository.  
-3. Click **Deploy** → You’ll get a live link in the format:  
-https://your-project-name.vercel.app/
-
 
 ---
 
-## 📖 How to Run Locally
+##  How to Run Locally
 1. Clone this repository:
 ```bash
 git clone https://github.com/your-username/appliance-energy-website.git
@@ -43,6 +51,6 @@ Open the project folder in Visual Studio Code.
 
 Open index.html in your browser (or use the VS Code Live Server extension).
 
-🤖 GenAI Acknowledgement
+    GenAI Acknowledgement
 This project was created by Muhd Zareefe.
 Guidance, starter code, and documentation support were generated with the help of ChatGPT (OpenAI GenAI tool)
