@@ -6,6 +6,46 @@
   <title>Appliance Energy Consumption - Televisions</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  <style>
+    /* --- Data Story Styling --- */
+    #data-story {
+      margin-top: 2rem;
+    }
+    .insight {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+      gap: 1rem;
+    }
+    .insight img {
+      flex: 1 1 40%;
+      max-width: 45%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .insight-content {
+      flex: 1 1 50%;
+      min-width: 280px;
+    }
+    .caption {
+      font-style: italic;
+      margin: 0.4rem 0;
+      color: #555;
+    }
+    .takeaway {
+      margin-top: 0.8rem;
+    }
+    @media (max-width: 768px) {
+      .insight {
+        flex-direction: column;
+      }
+      .insight img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -25,6 +65,7 @@
       Modern televisions vary greatly in their power usage depending on size and
       technology. Below is a sample comparison:
     </p>
+
     <table>
       <thead>
         <tr>
@@ -34,23 +75,96 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>32"</td>
-          <td>LED</td>
-          <td>30W</td>
-        </tr>
-        <tr>
-          <td>55"</td>
-          <td>LED</td>
-          <td>80W</td>
-        </tr>
-        <tr>
-          <td>65"</td>
-          <td>OLED</td>
-          <td>120W</td>
-        </tr>
+        <tr><td>32"</td><td>LED</td><td>30W</td></tr>
+        <tr><td>55"</td><td>LED</td><td>80W</td></tr>
+        <tr><td>65"</td><td>OLED</td><td>120W</td></tr>
       </tbody>
     </table>
+
+    <hr>
+
+    <!-- Data Story Section -->
+    <section id="data-story">
+      <h2>Data Story: Energy Consumption Insights for Retail Buyers</h2>
+      <p>
+        This analysis highlights key insights from the Australian Television Energy Consumption dataset.
+        It helps retail buyers identify which models and technologies to stock, balancing consumer demand and sustainability.
+      </p>
+
+      <!-- Insight 1 -->
+      <article class="insight">
+        <img src="images/screen_tech_chart.png" alt="Bar chart of screen technologies">
+        <div class="insight-content">
+          <h3>1. TV Screen Technologies in Australia</h3>
+          <p class="caption">Figure 1 — Distribution of screen technologies (LED, OLED, QLED).</p>
+          <p class="takeaway"><strong>Takeaway:</strong> LED TVs dominate the market, followed by OLED and QLED models.</p>
+        </div>
+      </article>
+
+      <!-- Insight 2 -->
+      <article class="insight">
+        <img src="images/screen_size_chart.png" alt="Bar chart of screen sizes">
+        <div class="insight-content">
+          <h3>2. Common Screen Sizes</h3>
+          <p class="caption">Figure 2 — Frequency of popular TV screen sizes in Australia.</p>
+          <p class="takeaway"><strong>Takeaway:</strong> 55-inch and 43-inch TVs are most common, making them strong stock choices.</p>
+        </div>
+      </article>
+
+      <!-- Insight 3 -->
+      <article class="insight">
+        <img src="images/brand_model_chart.png" alt="Bar chart of brand model counts">
+        <div class="insight-content">
+          <h3>3. Brands with the Most Models</h3>
+          <p class="caption">Figure 3 — Comparison of brand variety by number of TV models.</p>
+          <p class="takeaway"><strong>Takeaway:</strong> Samsung, LG, and Sony lead in variety, suggesting wider appeal and product flexibility.</p>
+        </div>
+      </article>
+
+      <!-- Insight 4 -->
+      <article class="insight">
+        <img src="images/power_tech_chart.png" alt="Bar chart comparing power use by technology">
+        <div class="insight-content">
+          <h3>4. Power Consumption by Screen Technology</h3>
+          <p class="caption">Figure 4 — Average power use across display technologies.</p>
+          <p class="takeaway"><strong>Takeaway:</strong> LCD and LED TVs are more energy-efficient compared to OLEDs.</p>
+        </div>
+      </article>
+
+      <!-- Insight 5 -->
+      <article class="insight">
+        <img src="images/size_power_chart.png" alt="Scatter plot showing relationship between screen size and power use">
+        <div class="insight-content">
+          <h3>5. Relationship Between Screen Size and Power Use</h3>
+          <p class="caption">Figure 5 — Power consumption tends to rise with screen size.</p>
+          <p class="takeaway"><strong>Takeaway:</strong> Larger TVs generally use more power, but some models manage good efficiency ratings.</p>
+        </div>
+      </article>
+
+      <!-- Insight 6 -->
+      <article class="insight">
+        <img src="images/star_rating_chart.png" alt="Scatter plot showing star rating vs screen size">
+        <div class="insight-content">
+          <h3>6. Star Rating and Screen Size Relationship</h3>
+          <p class="caption">Figure 6 — Energy efficiency (star ratings) across various screen sizes.</p>
+          <p class="takeaway"><strong>Takeaway:</strong> Star ratings remain consistent across most sizes; several large models still achieve high efficiency ratings.</p>
+        </div>
+      </article>
+
+      <!-- Conclusion -->
+      <article class="insight">
+        <div class="insight-content">
+          <h3>Conclusion</h3>
+          <p>
+            The analysis of Australian television energy data reveals that LED and LCD technologies dominate the market, offering both affordability and efficiency that appeal to most consumers.
+            Among all sizes, 55-inch models are the most common, reflecting strong demand for mid-to-large screens.
+            Major brands such as Samsung, LG, and Sony provide the widest range of models, giving retailers greater flexibility in stock selection.
+            While larger screens generally use more power, several high-star-rated models demonstrate that energy efficiency and size can coexist.
+            Overall, these insights help retail buyers make data-driven decisions about which products to stock, balancing consumer demand, energy performance, and sustainability goals.
+          </p>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer>
