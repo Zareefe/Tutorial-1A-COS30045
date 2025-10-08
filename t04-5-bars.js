@@ -1,45 +1,40 @@
+// t04-5-bars.js
 const createBarChart = (data) => {
-  const viewW = 540, viewH = 320;
-  const margin = { top: 20, right: 30, bottom: 30, left: 120 };
-  const innerW = viewW - margin.left - margin.right;
-  const innerH = viewH - margin.top - margin.bottom;
+  // Step 1: Use a viewBox (to demonstrate scaling) and set display size
+  const viewW = 500;   // narrow on purpose (forces x scaling)
+  const viewH = 1600;  // tall logical space for many bars
+  const displayW = 640; // physical display width
+  const displayH = 420; // physical display height
 
+  // Create the SVG container
   const svg = d3.select(".responsive-svg-container")
     .append("svg")
-    .attr("viewBox", `0 0 ${viewW} ${viewH}`)
-    .style("width", "100%")
-    .style("height", "auto");
+    .attr("viewBox", `0 0 ${viewW} ${viewH}`) // logical coords
+    .attr("width", displayW)                   // actual rendered size
+    .attr("height", displayH)                  // actual rendered size
+    .style("border", "1px solid black");
 
-  const chart = svg.append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
-  // X Scale (linear for counts)
-  const xMax = d3.max(data, d => d.count);
+  // Step 2: Add linear x-scale (fit widths to viewBox)
+  const xMax = d3.max(data, d => d.count); // numeric data for bar length
   const xScale = d3.scaleLinear()
-    .domain([0, xMax])
-    .range([0, innerW]);
+    .domain([0, xMax]) // input domain
+    .range([0, viewW]); // output range (in logical pixels)
 
-  // Y Scale (categorical for brands)
+  // Step 3: Add band y-scale (space bars evenly)
   const yScale = d3.scaleBand()
-    .domain(data.map(d => d.brand))
-    .range([0, innerH])
-    .padding(0.2);
+    .domain(data.map(d => d.brand)) // categorical axis
+    .range([0, viewH]) // tall logical space
+    .paddingInner(0.2)
+    .paddingOuter(0.1);
 
-  // Bars
-  chart.selectAll("rect")
+  // Step 4: Draw bars
+  svg.selectAll("rect")
     .data(data)
     .join("rect")
+    .attr("class", d => `bar bar-${d.count}`)
     .attr("x", 0)
     .attr("y", d => yScale(d.brand))
     .attr("width", d => xScale(d.count))
     .attr("height", yScale.bandwidth())
     .attr("fill", "steelblue");
-
-  // Axes (for visual reference)
-  chart.append("g")
-    .call(d3.axisLeft(yScale).tickSize(0).tickPadding(6));
-
-  chart.append("g")
-    .attr("transform", `translate(0,${innerH})`)
-    .call(d3.axisBottom(xScale).ticks(5));
 };
