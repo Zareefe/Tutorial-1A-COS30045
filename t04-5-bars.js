@@ -1,5 +1,5 @@
 const createBarChart = (data) => {
-  const viewW = 640, viewH = 420;
+  const viewW = 540, viewH = 320;
   const margin = { top: 20, right: 30, bottom: 30, left: 120 };
   const innerW = viewW - margin.left - margin.right;
   const innerH = viewH - margin.top - margin.bottom;
