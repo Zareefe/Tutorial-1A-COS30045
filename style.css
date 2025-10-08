@@ -75,9 +75,15 @@ th {
 }
 
 .responsive-svg-container {
-margin: 0 auto; /* center */
-width: 100%; /* fill parent width */
-max-width: 1200px; /* cap max width */
+  width: 100%;
+  height: auto;
+  min-height: 450px;
+  margin: 2rem 0;
+}
+
+.responsive-svg-container svg {
+  width: 100%;
+  height: auto;
 }
 
 /* Footer */
